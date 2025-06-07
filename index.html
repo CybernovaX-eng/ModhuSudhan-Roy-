@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hacked By ModhuSudhan Roy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Orbitron', monospace;
+      background-color: black;
+      overflow: hidden;
+      color: #00ff00;
+    }
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+    .container {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding-top: 60px;
+    }
+    img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 4px solid #00ff00;
+      box-shadow: 0 0 20px #00ff00;
+    }
+    h1 {
+      margin: 20px 0;
+      font-size: 2.5em;
+      color: #00ff00;
+      text-shadow: 0 0 10px #00ff00;
+    }
+    .cyber-symbols {
+      font-size: 2.5em;
+      color: #00ffcc;
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.2); opacity: 0.7; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .terminal {
+      background: rgba(0, 0, 0, 0.8);
+      border: 2px solid #00ff00;
+      width: 80%;
+      margin: 20px auto;
+      padding: 20px;
+      font-size: 1em;
+      height: 180px;
+      overflow-y: auto;
+      box-shadow: 0 0 20px #00ff00;
+      color: #00ff00;
+      text-align: left;
+    }
+    .logic-quote {
+      font-size: 1em;
+      margin-top: 30px;
+      color: #ffcc00;
+    }
+    .logic-quote span {
+      display: block;
+      margin-top: 10px;
+      font-size: 0.9em;
+      color: #ff6699;
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="https://audio.jukehost.co.uk/34GC4AqsSmb7v8VGqutpj20uE1zhC0Lk" type="audio/mpeg">
+  </audio>
+
+  <canvas id="stars"></canvas>
+
+  <div class="container">
+    <img src="https://i.ibb.co/KxK5JwQS/peakpx.jpg" alt="ModhuSudhan Roy">
+    <h1>HACKED BY ModhuSudhan Roy</h1>
+    <div class="cyber-symbols">🔰🔱🔰</div>
+
+    <div class="terminal" id="terminal"></div>
+
+    <div class="logic-quote">
+      “এক অভ্যন্তরীণ ভূমিকম্পের মধ্য দিয়ে যাচ্ছি।”<br />
+      <span>"Going through an internal earthquake."</span>
+    </div>
+  </div>
+
+  <script>
+    const terminal = document.getElementById("terminal");
+    const lines = [
+      "[+] Connecting to target server...",
+      "[+] Bypassing firewall...",
+      "[+] Uploading shell...",
+      "[+] Exploit successful...",
+      "[✔] Root Access Granted!",
+      "[⚠] System Breached by ModhuSudhan Roy"
+    ];
+
+    let i = 0;
+    function typeLine() {
+      if (i < lines.length) {
+        const line = document.createElement("div");
+        line.textContent = lines[i];
+        terminal.appendChild(line);
+        terminal.scrollTop = terminal.scrollHeight;
+        i++;
+        setTimeout(typeLine, 1000);
+      }
+    }
+    typeLine();
+  </script>
+
+  <script>
+    // STAR BACKGROUND ANIMATION
+    const canvas = document.getElementById('stars');
+    const ctx = canvas.getContext('2d');
+    let stars = [];
+
+    function resize() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.onresize = resize;
+    resize();
+
+    for (let i = 0; i < 120; i++) {
+      stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: Math.random() * 1.5,
+        speed: Math.random() * 0.5 + 0.2
+      });
+    }
+
+    function animateStars() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = '#00ff00';
+      stars.forEach(star => {
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+        ctx.fill();
+        star.y += star.speed;
+        if (star.y > canvas.height) {
+          star.y = 0;
+          star.x = Math.random() * canvas.width;
+        }
+      });
+      requestAnimationFrame(animateStars);
+    }
+    animateStars();
+  </script>
+</body>
+</html>
